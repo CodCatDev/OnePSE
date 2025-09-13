@@ -3,5 +3,5 @@ OpenGL framework for python!
 
 # Developing!
 
-0.1 beta:
+0.1 beta
 Developing: @___________________| 1%
