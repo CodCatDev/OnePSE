@@ -4,4 +4,4 @@ OpenGL framework for python!
 # Developing!
 
 0.1 beta:
-Developing: @                     | 1%
+Developing: @___________________| 1%
