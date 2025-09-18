@@ -1,7 +1,5 @@
-# OnePGL
-OpenGL framework for python!
-
-# Developing!
-
-0.1 beta
-Developing: @___________________| 1%
+# OnePSE
+## Readme translations
+[Ru]()
+## About
+*OnePSE* - is a free, open source, python game engine based on SDL graphics framework!
