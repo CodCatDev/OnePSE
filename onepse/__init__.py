@@ -7,4 +7,5 @@
 # Init class
 
 # importing all
-from onepse.window import CreateWindow
+from Onepse.window import CreateWindow
+from Onepse.eventer import EventHandler

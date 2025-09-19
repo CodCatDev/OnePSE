@@ -21,3 +21,5 @@ class _DATA:
     DEBUG_ICON = f"{ENGINE_PATH}\\res\\debugIcon.png"
     # Sdl path
     SDL_PATH = f"{ENGINE_PATH}\\lib\\{SDL}"
+    # Standart font
+    FONT_PATH = f"{ENGINE_PATH}\\res\\font.ttf"

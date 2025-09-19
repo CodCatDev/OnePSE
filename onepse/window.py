@@ -8,10 +8,9 @@
 
 # import libs
 import os
-import pathlib
 
 # import a data
-from onepse.data import _DATA as data
+from Onepse.data import _DATA as data
 
 # Set a SDL2.dll path
 os.environ["PYSDL2_DLL_PATH"] = data.SDL_PATH
@@ -32,7 +31,7 @@ class CreateWindow:
         sdl.SDL_FreeSurface(surface)
         self.visible = False
     # Show window
-    def Show(self) -> bool:
+    def show(self) -> bool:
         try:
             self.window.show()
             self.visible = True
@@ -40,7 +39,7 @@ class CreateWindow:
             return False
         return True
     # Hide window
-    def Hide(self) -> bool:
+    def hide(self) -> bool:
         try:
             self.window.hide()
             self.visible = False
@@ -48,4 +47,4 @@ class CreateWindow:
             return False
         return True
     # check, if window visible?
-    def IsVisible(self) -> bool: return self.visible
+    def isVisible(self) -> bool: return self.visible
