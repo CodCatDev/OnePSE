@@ -20,7 +20,12 @@ from Onepse.res.keys import keys
 sdlext.init()
 
 class InputKey:
-    """"""
+    """Inputted key class
+    
+
+    ## Variables:
+        **code** - Int value, Symbol code of the key
+        **key** - String value, it's a pressed key. (Template: "W")"""
     def __init__(self, code, name):
         self.code = code
         self.key = name
@@ -33,6 +38,7 @@ class EventHandler:
         self.close = False
     # update a data of events and buttons
     def update(self):
+        """Updating a events"""
         evs = sdlext.get_events()
         for event in evs:
             if event.type == sdl.SDL_KEYDOWN and event.key.keysym.sym in keys:
@@ -41,6 +47,7 @@ class EventHandler:
                 self.close = True
     # Check a closing of app
     def isClose(self):
+        """Return a bool value, """
         if self.close: return True
         else: return False
     def getKeys(self) -> List[InputKey]:
@@ -49,7 +56,7 @@ class EventHandler:
         Every InputKey object is a class with Key name and code.
 
         Returns:
-            List[InputKey]: Список объектов InputKey."""
+            List[InputKey]: Every list value is a InputKey class."""
         Klist = []
         for key in self.keys:
             Klist.append(InputKey(key.sym, keys[key.sym]))

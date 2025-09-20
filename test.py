@@ -1,15 +1,10 @@
 import Onepse
-#import time
-App = Onepse.CreateWindow()
-App.show()
-run = True
-Eventer = Onepse.EventHandler()
-while run:
-    Eventer.update()
-    #time.sleep(1)
-    if Eventer.isClose():
-        run = False
+app = Onepse.CreateWindow(title="Test App", size=[600,300]) # Creating window
+app.show() # Show window
+eventer = Onepse.EventHandler()
+app.setBgColor([255,100,125])
+while True:
+    eventer.update()
+    if eventer.isClose():
         break
-    keys = Eventer.getKeys()
-    if keys:
-        print(keys[0].key)
+    app.updateRender()

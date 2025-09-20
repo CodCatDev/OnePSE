@@ -6,6 +6,8 @@
 # 
 # Text Class
 
-class Text:
-    def __init__(self, text: str, size=16, color=[255,255,255]):
-        pass
+from typing import List
+
+class TextObject:
+    def __init__(self, text: str, size: int =16, color: List[int]=[255,255,255], pos: List[int] = [300,200]):
+        

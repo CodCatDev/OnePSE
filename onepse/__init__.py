@@ -9,3 +9,4 @@
 # importing all
 from Onepse.window import CreateWindow
 from Onepse.eventer import EventHandler
+from Onepse.debugger import Debugger
