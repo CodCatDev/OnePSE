@@ -7,4 +7,9 @@ while True:
     eventer.update()
     if eventer.isClose():
         break
+    for key in eventer.getKeys():
+        if key.key == "W":
+            app.setBgColor([255,255,255])
+        elif key.key == "B":
+            app.setBgColor([0,0,0])
     app.updateRender()

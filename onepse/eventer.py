@@ -50,6 +50,7 @@ class EventHandler:
         """Return a bool value, """
         if self.close: return True
         else: return False
+    def resetClosing(self): self.close = False
     def getKeys(self) -> List[InputKey]:
         """Return a pressed keys, as InputKey class
 
