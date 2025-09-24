@@ -22,6 +22,8 @@ os.environ["PYSDL2_DLL_PATH"] = data.SDL_PATH
 import sdl2 as sdl
 import sdl2.ext as sdlext
 
+from Onepse.debugger import Debugger
+
 # Window Create function
 def CreateWindow(title: str, size: List[int] = [600,300]):
     """Creating a Window of your application
@@ -39,7 +41,7 @@ class Window:
         sdl.SDL_SetWindowIcon(self.window.window, surface)
         sdl.SDL_FreeSurface(surface)
         self.visible = False
-        self._render = sdlext.Renderer(self.window)
+        self.Render = Render(self.window)
     # Show window
     def show(self) -> bool:
         """Showing a window"""
@@ -61,7 +63,29 @@ class Window:
     def isVisible(self) -> bool: 
         """Return Bool value, True if window visible (show)"""
         return self.visible
+
+class Render:
+    def __init__(self, window: sdlext.Window):
+            self._render = sdlext.Renderer(window)
+            self.objects = []
+            self.lastBgColor = sdlext.Color
+            self.dbg = Debugger()
     def setBgColor(self, rgb: List[int]) -> None:
-        self._render.clear(sdlext.Color(rgb[0],rgb[1],rgb[2]))
-    def updateRender(self) -> None:
+        self.lastBgColor = sdlext.Color(rgb[0],rgb[1],rgb[2])
+    def update(self) -> None:
+        for obj in self.objects:
+            if obj._type() == "rect":
+                self._render.fill(obj._getRect(), obj._getColor())
         self._render.present()
+    def clear(self) -> None:
+        self._render.clear()
+    def addObject(self, obj) -> None:
+        if not obj in self.objects:
+            self.objects.append(obj)
+        else:
+            self.dbg.warn("ObjectManager", f"Object to render already rendered!")
+    def removeObject(self, obj):
+        if obj in self.objects:
+            self.objects.remove(obj)
+        else:
+            self.dbg.warn("ObjectManager", f"Object to delete not found in RenderObjects!")

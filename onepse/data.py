@@ -18,7 +18,7 @@ class _DATA:
     # Engine-Dir path
     ENGINE_PATH = pathlib.Path(__file__).resolve().parent.__str__()
     # Debug icon path
-    DEBUG_ICON = f"{ENGINE_PATH}\\res\\debugIcon.png"
+    DEBUG_ICON = f"{ENGINE_PATH}\\res\\appIcon.png"
     # Sdl path
     SDL_PATH = f"{ENGINE_PATH}\\lib\\{SDL}"
     # Standart font

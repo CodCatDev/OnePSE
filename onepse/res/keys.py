@@ -1,3 +1,11 @@
+# OnePSE
+# (Py Sdl Engine)
+# by CodCatDev
+# License: Apache
+# https://github.com/CodCatDev/OnePSE
+# 
+# Keys list
+
 import sdl2
 
 keys = {
@@ -26,5 +34,18 @@ keys = {
     sdl2.SDLK_w: "W",
     sdl2.SDLK_x: "X",
     sdl2.SDLK_y: "Y",
-    sdl2.SDLK_z: "Z"
+    sdl2.SDLK_z: "Z",
+    sdl2.SDLK_F1: "F1",
+    sdl2.SDLK_F2: "F2",
+    sdl2.SDLK_F3: "F3",
+    sdl2.SDLK_F4: "F4",
+    sdl2.SDLK_F5: "F5",
+    sdl2.SDLK_F6: "F6",
+    sdl2.SDLK_F7: "F7",
+    sdl2.SDLK_F8: "F8",
+    sdl2.SDLK_F9: "F9",
+    sdl2.SDLK_F10: "F10",
+    sdl2.SDLK_F11: "F11",
+    sdl2.SDLK_F12: "F11",
+    sdl2.SDLK_ESCAPE: "ESC"
 }

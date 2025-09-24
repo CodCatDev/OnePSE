@@ -9,4 +9,5 @@
 # importing all
 from Onepse.window import CreateWindow
 from Onepse.eventer import EventHandler
-from Onepse.debugger import Debugger
+from Onepse.color import Color
+from Onepse.object import Objects

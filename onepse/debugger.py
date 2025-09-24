@@ -1,3 +1,11 @@
+# OnePSE
+# (Py Sdl Engine)
+# by CodCatDev
+# License: Apache
+# https://github.com/CodCatDev/OnePSE
+# 
+# Debugger
+
 import time
 from typing import TextIO
 
