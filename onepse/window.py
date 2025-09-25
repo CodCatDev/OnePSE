@@ -10,7 +10,7 @@
 import os
 
 # import a data
-from Onepse.data import _DATA as data
+from onepse.data import _DATA as data
 
 # import Typing
 from typing import List
@@ -22,10 +22,14 @@ os.environ["PYSDL2_DLL_PATH"] = data.SDL_PATH
 import sdl2 as sdl
 import sdl2.ext as sdlext
 
-from Onepse.debugger import Debugger
+import inspect
+
+from pathlib import Path
+
+from onepse.debugger import Debugger
 
 # Window Create function
-def CreateWindow(title: str, size: List[int] = [600,300]):
+def CreateWindow(title: str = "OnePSE Debugger", size: List[int] = [600,300]):
     """Creating a Window of your application
     
     Returns:
@@ -41,6 +45,7 @@ class Window:
         sdl.SDL_SetWindowIcon(self.window.window, surface)
         sdl.SDL_FreeSurface(surface)
         self.visible = False
+        self.dbg = Debugger()
         self.Render = Render(self.window)
     # Show window
     def show(self) -> bool:
@@ -63,6 +68,14 @@ class Window:
     def isVisible(self) -> bool: 
         """Return Bool value, True if window visible (show)"""
         return self.visible
+    def setIcon(self, path: str) -> None:
+        if os.path.exists(path):
+            dirPath = os.path.dirname(inspect.stack()[1].filename)
+            surface = sdlext.load_image(f"{dirPath}\\{path}")
+            sdl.SDL_SetWindowIcon(self.window.window, surface)
+            sdl.SDL_FreeSurface(surface)
+        else:
+            self.dbg.err("Window", f"Icon '{path}' not found!")
 
 class Render:
     def __init__(self, window: sdlext.Window):
@@ -89,3 +102,4 @@ class Render:
             self.objects.remove(obj)
         else:
             self.dbg.warn("ObjectManager", f"Object to delete not found in RenderObjects!")
+    

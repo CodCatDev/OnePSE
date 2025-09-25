@@ -15,9 +15,8 @@ Initially, the project was conceived as a game on Sdl2, but soon, due to the com
 
 This project is under active development. Therefore, it may receive lengthy but significant updates. We would be grateful if you contributed to the projec
 
-## Version 0.0.0004 ([Whats new?](Added/AddedEn.md))
-
-## [Code templates](Templates/infoEN.md)
+## First alpha, not prototype!
+## Version 0.0.0005 ([Whats new?](Added/AddedEn.md))
 
 ## Authors
 

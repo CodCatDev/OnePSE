@@ -12,7 +12,7 @@ import pathlib
 # Data class for engine
 class _DATA:
     # Engine version
-    VERSION = "0.1"
+    VERSION = "0.0.0005"
     # SDL dir
     SDL = "SDL-2.32.10"
     # Engine-Dir path

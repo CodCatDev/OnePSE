@@ -14,7 +14,7 @@ import sdl2.ext as sdlext
 from typing import List
 
 # import keys list
-from Onepse.res.keys import keys
+from onepse.res.keys import keys
 
 # initialize a sdlExt
 sdlext.init()
