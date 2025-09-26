@@ -22,6 +22,8 @@ os.environ["PYSDL2_DLL_PATH"] = data.SDL_PATH
 import sdl2 as sdl
 import sdl2.ext as sdlext
 
+from onepse.color import ColorObj
+
 import inspect
 
 from pathlib import Path
@@ -83,15 +85,17 @@ class Render:
             self.objects = []
             self.lastBgColor = sdlext.Color
             self.dbg = Debugger()
-    def setBgColor(self, rgb: List[int]) -> None:
-        self.lastBgColor = sdlext.Color(rgb[0],rgb[1],rgb[2])
+    def setBgColor(self, rgb: ColorObj) -> None:
+        self.lastBgColor = sdlext.Color(rgb.r,rgb.g,rgb.b)
     def update(self) -> None:
         for obj in self.objects:
             if obj._type() == "rect":
                 self._render.fill(obj._getRect(), obj._getColor())
+            elif obj._type() == "text":
+                self._render.fill(obj._getSurf(), (255,255,255))
         self._render.present()
     def clear(self) -> None:
-        self._render.clear()
+        self._render.clear(self.lastBgColor)
     def addObject(self, obj) -> None:
         if not obj in self.objects:
             self.objects.append(obj)

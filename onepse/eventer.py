@@ -19,16 +19,15 @@ from onepse.res.keys import keys
 # initialize a sdlExt
 sdlext.init()
 
-class InputKey:
-    """Inputted key class
-    
-
-    ## Variables:
-        **code** - Int value, Symbol code of the key
-        **key** - String value, it's a pressed key. (Template: "W")"""
-    def __init__(self, code, name):
-        self.code = code
-        self.key = name
+class KeysHandler:
+    def __init__(self,keys):
+        self.__keys = keys
+    def key(self, key: str):
+        k = key.lower()
+        if k in self.__keys:
+            return True
+        else: 
+            return False
 
 # input handler
 class EventHandler:
@@ -37,30 +36,22 @@ class EventHandler:
         self.keys = []
         self.close = False
     # update a data of events and buttons
-    def update(self):
-        """Updating a events"""
+    def updateEvents(self):
         evs = sdlext.get_events()
         for event in evs:
-            if event.type == sdl.SDL_KEYDOWN and event.key.keysym.sym in keys:
-                self.keys.append(event.key.keysym)
             if event.type == sdl.SDL_QUIT:
                 self.close = True
+    def updateKeys(self):
+        LKey = []
+        Klist = sdl.SDL_GetKeyboardState(None)
+        for code, name in keys.items():
+            if Klist[code]:
+                LKey.append(name.lower())
+        sdl.SDL_Delay(10)
+        return KeysHandler(LKey)
     # Check a closing of app
     def isClose(self):
         """Return a bool value, """
         if self.close: return True
         else: return False
     def resetClosing(self): self.close = False
-    def getKeys(self) -> List[InputKey]:
-        """Return a pressed keys, as InputKey class
-
-        Every InputKey object is a class with Key name and code.
-
-        Returns:
-            List[InputKey]: Every list value is a InputKey class."""
-        Klist = []
-        for key in self.keys:
-            Klist.append(InputKey(key.sym, keys[key.sym]))
-        self.keys = []
-        return Klist
-    

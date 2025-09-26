@@ -23,20 +23,28 @@ class Objects:
             return self.__color
         def getPos(self) -> list:
             return [self.__x, self.__y]
-        def setPos(self, x: int, y: int) -> None:
+        def setPos(self, x, y) -> None:
             self.__x = x
             self.__y = y
             self.__rect.x = x
             self.__rect.y = y
-        def changePos(self,xto:int = 0,yto:int = 0) -> None:
+        def changePos(self,xto,yto) -> None:
             x,y = self.__x,self.__y
             x += xto
             y += yto
-            self.__x = x
-            self.__y = y
-            self.__rect.x = x
-            self.__rect.y = y
+            self.__x = int(x)
+            self.__y = int(y)
+            self.__rect.x = int(x)
+            self.__rect.y = int(y)
 
 class Text:
-    def __init__(self,text: str, size: int = 16, color: ColorObj = ColorObj(255,255,255)):
+    def __init__(self, size: int = 16, color: ColorObj = ColorObj(255,255,255)):
         self.__text = sdlext.FontTTF(font={_DATA.FONT_PATH}, size=size,color=(color.r,color.b,color.g))
+        self.__textSur = self.__text.render_text("Example")
+        self.__type = "text"
+    def setText(self,text: str):
+        self.__textSur = self.__text.render_text(text)
+    def _getSurf(self):
+        return self.__textSur
+    def _type(self):
+        return self.__type
