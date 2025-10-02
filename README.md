@@ -28,7 +28,7 @@ This project is under active development. Therefore, it may receive lengthy but 
 
 ## Authors
 
-| ![LREALLYCARFAMER] <h2>[ReallyCarFamer]</h2> <h3> 🎮Tester </h3> <h3> 11 Years</h3>| ![LCODCATDEV] <h2>[CodCatDev]</h2> <h3> 💻Programmer \| 🔧Creator</h3> <h3> 12 Years </h3>| ![LIILLUMINATION] <h2>[IILLUMINATION]</h2> <h3>🖌️Logo designer<h3> |
+| ![LREALLYCARFAMER] <h2>[ReallyCarFamer]</h2> <h3> 🎮Tester </h3> <h3> 12 Years</h3>| ![LCODCATDEV] <h2>[CodCatDev]</h2> <h3> 💻Programmer \| 🔧Creator</h3> <h3> 12 Years </h3>| ![LIILLUMINATION] <h2>[IILLUMINATION]</h2> <h3>🖌️Logo designer<h3> |
 | :---: | :---: | :---: |
 
 # How to install?
