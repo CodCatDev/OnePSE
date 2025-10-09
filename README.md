@@ -1,5 +1,8 @@
 <h1 align="center"> <b>OnePSE</b> </h1>
 
+# Warning!
+## This repository is no longer maintained and will not be updated! New engine page: [OneEngine](https://github.com/CodCatDev/OneEngine)
+
 <div align="center">
     <img src="ReadmeRes/banner.png" width="500">
 </div>
